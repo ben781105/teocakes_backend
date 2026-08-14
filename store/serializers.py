@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product,Cart,CartItem
+from .models import Product,Cart,CartItem,CustomCakeRequest
 
 class ProductSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
@@ -37,3 +37,14 @@ class CartSerializer(serializers.ModelSerializer):
 
     def get_total(self, obj):
         return sum(item.product.price * item.quantity for item in obj.items.all())
+
+
+class CustomCakeRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomCakeRequest
+        fields = [
+            "id", "name", "phone_number", "description", "size",
+            "flavor", "occasion", "date_needed", "budget",
+            "reference_image", "additional_message", "created_at"
+        ]
+        read_only_fields = ["id", "created_at"]
