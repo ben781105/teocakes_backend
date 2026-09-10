@@ -2,9 +2,9 @@ from rest_framework.decorators import api_view,parser_classes
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Product,Cart,CartItem,CustomCakeRequest
-from .serializers import ProductSerializer,CartSerializer,CustomCakeRequestSerializer
-
+from .models import Product,Cart,CartItem,OrderItem,Order
+from .serializers import ProductSerializer,CartSerializer,CustomCakeRequestSerializer,OrderSerializer
+from django.db import transaction
 
 @api_view(["GET"])
 def products(request):
@@ -105,43 +105,34 @@ def set_cart_phone(request, cart_id):
     except Cart.DoesNotExist:
         return Response({"error": "Cart not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    # if another cart already claimed this number, merge its items into the current cart
-    existing = Cart.objects.filter(phone_number=phone).exclude(id=cart.id).first()
-    if existing:
-        for item in existing.items.all():
-            current_item, created = CartItem.objects.get_or_create(
-                cart=cart,
+    if not cart.items.exists():
+        return Response({"error": "Cart is empty"}, status=status.HTTP_400_BAD_REQUEST)
+
+    with transaction.atomic():
+        cart.phone_number = phone
+        cart.save()
+
+       
+        order = Order.objects.create(phone_number=phone, total=cart.total)
+        for item in cart.items.all():
+            OrderItem.objects.create(
+                order=order,
                 product=item.product,
-                defaults={"quantity": item.quantity}
+                quantity=item.quantity,
+                price=item.product.price,  
             )
-            if not created:
-                current_item.quantity += item.quantity
-                current_item.save()
-        existing.delete()
 
-    cart.phone_number = phone
-    cart.save()
+        
+        cart.items.all().delete()
+        cart.save()
 
-    serializer = CartSerializer(cart, context={"request": request})
-    return Response(serializer.data)
+    order_serializer = OrderSerializer(order, context={"request": request})
+    cart_serializer = CartSerializer(cart, context={"request": request})
 
-
-@api_view(["GET"])
-def get_cart_by_phone(request):
-    phone = request.query_params.get("phone")
-
-    if not phone:
-        return Response({"error": "phone query param is required"}, status=status.HTTP_400_BAD_REQUEST)
-
-    try:
-        cart = Cart.objects.get(phone_number=phone)
-    except Cart.DoesNotExist:
-        return Response({"error": "No cart found for this number"}, status=status.HTTP_404_NOT_FOUND)
-
-    serializer = CartSerializer(cart, context={"request": request})
-    return Response(serializer.data)
-
-
+    return Response({
+        "order": order_serializer.data,
+        "cart": cart_serializer.data,
+    })
 
 @api_view(["POST"])
 @parser_classes([MultiPartParser, FormParser])

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product,Cart,CartItem,CustomCakeRequest
+from .models import Product,Cart,CartItem,CustomCakeRequest,Order,OrderItem
 
 class ProductSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
@@ -29,15 +29,11 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 class CartSerializer(serializers.ModelSerializer):
     items = CartItemSerializer(many=True, read_only=True)
-    total = serializers.SerializerMethodField()
+    total = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
 
     class Meta:
         model = Cart
         fields = ["cart_id", "items", "total"]
-
-    def get_total(self, obj):
-        return sum(item.product.price * item.quantity for item in obj.items.all())
-
 
 class CustomCakeRequestSerializer(serializers.ModelSerializer):
     class Meta:
@@ -48,3 +44,36 @@ class CustomCakeRequestSerializer(serializers.ModelSerializer):
             "reference_image", "additional_message", "created_at"
         ]
         read_only_fields = ["id", "created_at"]
+
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    product_name = serializers.CharField(source="product.name", read_only=True)
+    product_image = serializers.ImageField(source="product.image", read_only=True)
+    subtotal = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+
+    class Meta:
+        model = OrderItem
+        fields = [
+            "id",
+            "product",
+            "product_name",
+            "product_image",
+            "quantity",
+            "price",
+            "subtotal",
+        ]
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Order
+        fields = [
+            "order_id",
+            "phone_number",
+            "total",
+            "status",
+            "created_at",
+            "items",
+        ]

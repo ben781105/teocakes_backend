@@ -15,10 +15,6 @@ urlpatterns = [
          views.create_custom_request, 
          name="create-custom-request"
     ),
-    path("cart/by-phone/", 
-             views.get_cart_by_phone, 
-             name="get-cart-by-phone"
-    ),
     path(
         "cart/<str:cart_id>/",
         views.get_cart,
