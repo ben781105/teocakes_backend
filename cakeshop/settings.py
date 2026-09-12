@@ -83,11 +83,10 @@ WSGI_APPLICATION = 'cakeshop.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://localhost/teocakes_dev',  # fallback if DATABASE_URL is somehow missing
+        default=config('DATABASE_URL', default='postgresql://localhost/teocakes_dev'),
         conn_max_age=600,
     )
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
