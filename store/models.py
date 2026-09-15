@@ -26,9 +26,7 @@ class Product(models.Model):
         decimal_places=2
     )
 
-    image = models.ImageField(
-        upload_to="products/"
-    )
+    image = models.ImageField
 
     favourite = models.BooleanField(default=False)
 
