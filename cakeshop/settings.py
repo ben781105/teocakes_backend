@@ -53,28 +53,40 @@ MIDDLEWARE = [
 
 INSTALLED_APPS += ['storages']
 
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL')
-AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN', default='')  # your pub-xxxx.r2.dev domain, no https://
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID',default='')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY',default='')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME',default='') 
+AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL',default='')
+AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN', default='')  
 AWS_DEFAULT_ACL = None
 AWS_S3_FILE_OVERWRITE = False
-AWS_QUERYSTRING_AUTH = False  # cleaner public URLs, no signed query params
+AWS_QUERYSTRING_AUTH = False  
 
 
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+if AWS_ACCESS_KEY_ID:
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+else:
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 
 if AWS_S3_CUSTOM_DOMAIN:
     MEDIA_URL = f'{AWS_S3_CUSTOM_DOMAIN}/'
-
+else:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = BASE_DIR / 'media'
 
 CORS_ALLOWED_ORIGINS = config(
     'CORS_ALLOWED_ORIGINS',
