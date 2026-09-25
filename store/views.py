@@ -80,8 +80,7 @@ def add_to_cart(request, cart_id):
         item.quantity += quantity
         item.save()
 
-    print("RAW DATA:", request.data)
-    print("PARSED MESSAGE:", repr(custom_message))
+   
 
     serializer = CartSerializer(cart, context={"request": request})
     return Response(serializer.data, status=status.HTTP_201_CREATED)
