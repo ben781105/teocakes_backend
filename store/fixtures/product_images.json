@@ -1,0 +1,42 @@
+[
+{
+  "model": "store.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-1.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-1-thumb_Rfrzh8P.webp",
+    "order": 1
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-2.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-2-thumb_VhB8L3K.webp",
+    "order": 2
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-3.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-3-thumb_ZAepnKe.webp",
+    "order": 3
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-4.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-4-thumb_O2HWO3X.webp",
+    "order": 4
+  }
+}
+]

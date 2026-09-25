@@ -1,0 +1,23 @@
+[
+{
+  "model": "store.flavour",
+  "pk": 1,
+  "fields": {
+    "name": "vanilla"
+  }
+},
+{
+  "model": "store.flavour",
+  "pk": 2,
+  "fields": {
+    "name": "strawberry"
+  }
+},
+{
+  "model": "store.flavour",
+  "pk": 3,
+  "fields": {
+    "name": "Mango"
+  }
+}
+]

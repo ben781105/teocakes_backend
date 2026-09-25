@@ -1,0 +1,68 @@
+[
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Birthday Cakes",
+    "slug": "birthday-cakes",
+    "image": "categories/birthday-cakes.webp",
+    "thumbnail": "categories/thumbs/birthday-cakes-thumb_4ODuUHI.webp",
+    "description": "Fresh birthday cakes in Entebbe, made to order for kids and adults alike. Choose a classic flavor or request a personalized birthday cake design."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Wedding Cakes",
+    "slug": "wedding-cakes",
+    "image": "categories/wedding-cakes.webp",
+    "thumbnail": "categories/thumbs/wedding-cakes-thumb_RrgVSK2.webp",
+    "description": "Elegant wedding cakes in Entebbe, custom-designed for your big day. Beautifully finished cakes tailored to your theme, size, and guest count."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Chocolate Cakes",
+    "slug": "chocolate-cakes",
+    "image": "categories/chocolate-cakes.webp",
+    "thumbnail": "categories/thumbs/chocolate-cakes-thumb_zWCxER5.webp",
+    "description": "Handmade chocolate cakes in Entebbe, made with rich, moist sponge and smooth chocolate buttercream. Baked fresh and ordered easily on WhatsApp."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Vanilla Cakes",
+    "slug": "vanilla-Cakes",
+    "image": "categories/vanilla-Cakes.webp",
+    "thumbnail": "categories/thumbs/vanilla-Cakes-thumb_8azalSX.webp",
+    "description": "Classic vanilla cakes in Entebbe, baked fresh with smooth buttercream frosting. A simple, timeless cake that suits any birthday or event."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Fruit Cakes",
+    "slug": "fruit-cakes",
+    "image": "categories/fruit-cakes.webp",
+    "thumbnail": "categories/thumbs/fruit-cakes-thumb_qumZIU1.webp",
+    "description": "Fresh fruit cakes in Entebbe, made with soft sponge and real fruit filling. A light, refreshing cake option for any celebration or occasion."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Custom Cakes",
+    "slug": "custom-cakes",
+    "image": "categories/custom-cakes.webp",
+    "thumbnail": "categories/thumbs/custom-cakes-thumb_5om6ZO7.webp",
+    "description": "Custom cakes in Entebbe, designed around your celebration and personal preferences. Order a personalized cake made exactly the way you imagined it."
+  }
+}
+]

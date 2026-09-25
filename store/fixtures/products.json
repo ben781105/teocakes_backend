@@ -1,0 +1,177 @@
+[
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Classic Birthday Cake",
+    "slug": "classic-birthday-cake",
+    "description": "Soft and fluffy vanilla sponge layered with smooth, creamy buttercream finished with colorful sprinkles.",
+    "price": "65000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/classic-birthday-cake.webp",
+    "thumbnail": "products/thumbs/classic-birthday-cake-thumb_HB0yASG.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:10:36.524Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Chocolate Birthday Cake",
+    "slug": "chocolate-birthday-cake",
+    "description": "Moist chocolate sponge layered with rich chocolate buttercream and finished with delicious chocolate decorations.",
+    "price": "70000.00",
+    "serving_size": "8 -10 people",
+    "prep_time": "48 hours",
+    "image": "products/chocolate-birthday-cake.webp",
+    "thumbnail": "products/thumbs/chocolate-birthday-cake-thumb_xYkkjCB.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:13:50.222Z",
+    "flavours": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "name": "Rainbow Cake",
+    "slug": "rainbow-cake",
+    "description": "Fun and colorful celebration cake made with soft vanilla sponge and creamy frosting, great for birthdays and joyful occasions.",
+    "price": "55000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/rainbow-cake.webp",
+    "thumbnail": "products/thumbs/rainbow-cake-thumb_4EqSBnI.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:17:16.649Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 5,
+    "name": "Strawberry Short Cake",
+    "slug": "strawberry-short-cake",
+    "description": "Soft vanilla sponge paired with creamy fruit filling for a refreshing fruity flavor, sweet cake and tangy strawberry",
+    "price": "60000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/strawberry-short-cake.webp",
+    "thumbnail": "products/thumbs/strawberry-short-cake-thumb_97325ld.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:20:15.247Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Red Velvet Cake",
+    "slug": "red-velvet-cake",
+    "description": "Soft red velvet layers combined with a smooth, creamy cheese frosting. Finished with elegant decorative touches",
+    "price": "80000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/red-velvet-cake.webp",
+    "thumbnail": "products/thumbs/red-velvet-cake-thumb_ZpSxrhm.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:38:27.631Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "name": "Classic Vanilla Cake",
+    "slug": "classic-vanilla-cake",
+    "description": "A light and fluffy vanilla sponge layered with smooth vanilla buttercream.",
+    "price": "56000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/classic-vanilla-cake.webp",
+    "thumbnail": "products/thumbs/classic-vanilla-cake-thumb_6yJB2Xf.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:40:55.492Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 6,
+    "name": "Personalized Celebration Cake",
+    "slug": "personalized-celebration-cake",
+    "description": "Specially designed cake created around your celebration and personal preferences.",
+    "price": "80000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/personalized-celebration-cake.webp",
+    "thumbnail": "products/thumbs/personalized-celebration-cake-thumb_bOOxEjT.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:43:01.857Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Black Forest Cake",
+    "slug": "black-forest-cake",
+    "description": "Layers of moist chocolate sponge combined with light whipped cream and sweet cherries. Finished with chocolate shavings for a classic Black Forest experience",
+    "price": "85000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/black-forest-cake.webp",
+    "thumbnail": "products/thumbs/black-forest-cake-thumb_9wbFZ6g.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:45:44.950Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 2,
+    "name": "Elegant White Wedding Cake",
+    "slug": "elegant-white-wedding-Cake",
+    "description": "A beautifully layered vanilla cake covered with smooth white buttercream and delicate floral details.",
+    "price": "100000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/elegant-white-wedding-Cake.webp",
+    "thumbnail": "products/thumbs/elegant-white-wedding-Cake-thumb_ktYxCyJ.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:51:53.543Z",
+    "flavours": []
+  }
+}
+]

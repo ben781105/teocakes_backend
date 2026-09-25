@@ -1,12 +1,65 @@
 from django.db import models
 import uuid
+from io import BytesIO
+from PIL import Image
+from django.core.files.base import ContentFile
+from django.utils.text import slugify
 
 class Category(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True, null=True)
+    image = models.ImageField(upload_to="categories/", blank=True, null=True)
+    thumbnail = models.ImageField(upload_to="categories/thumbs/", blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._original_image = self.image.name if self.image else None
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
+
+        image_changed = self.image and self.image.name != self._original_image
+
+        if self.image and (not self.thumbnail or image_changed):
+            self._resize_main()
+            self._make_thumbnail()
+            super().save(update_fields=["image", "thumbnail"])
+            self._original_image = self.image.name
+
+    def _resize_main(self):
+        img = Image.open(self.image)
+        if img.width <= 1200:
+            return
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((1200, 1200), Image.LANCZOS)
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=82)
+        self.image.save(f"{self.slug}.webp", ContentFile(buffer.getvalue()), save=False)
+
+    def _make_thumbnail(self):
+        img = Image.open(self.image)
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((500, 500), Image.LANCZOS)
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=80)
+        self.thumbnail.save(f"{self.slug}-thumb.webp", ContentFile(buffer.getvalue()), save=False)
+
+    def __str__(self):
+        return self.name
+class Flavour(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
-
 
 class Product(models.Model):
     category = models.ForeignKey(
@@ -25,16 +78,67 @@ class Product(models.Model):
         max_digits=10,
         decimal_places=2
     )
+    flavours = models.ManyToManyField(Flavour, blank=True)
+
+    serving_size = models.CharField(max_length=100, blank=True, help_text="e.g. 'Serves 8-10'")
+
+    prep_time = models.CharField(max_length=100, blank=True, help_text="e.g. '24-48 hours notice'")
 
     image = models.ImageField(
         upload_to="products/"
     )
+    thumbnail = models.ImageField(upload_to="products/thumbs/", blank=True, null=True)
 
     favourite = models.BooleanField(default=False)
 
     available = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._original_image = self.image.name if self.image else None
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
+
+        image_changed = self.image and self.image.name != self._original_image
+
+         
+        if self.image and (not self.thumbnail or image_changed):
+            self._make_thumbnail()
+            super().save(update_fields=["thumbnail"])
+            self._original_image = self.image.name
+
+    def _resize_main(self):
+        img = Image.open(self.image)
+        if img.width <= 1600:
+            return
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((1600, 1600), Image.LANCZOS)
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=82)
+        self.image.save(f"{self.slug}.webp", ContentFile(buffer.getvalue()), save=False)
+
+
+    def _make_thumbnail(self):
+        img = Image.open(self.image)
+        if img.mode not in ("RGB","RGBA"):
+          img = img.convert("RGB")
+        img.thumbnail((600, 600), Image.LANCZOS)
+
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=80)
+
+        name = f"{self.slug}-thumb.webp"
+        self.thumbnail.save(name, ContentFile(buffer.getvalue()), save=False)
+
+
 
     def __str__(self):
         return self.name
@@ -81,6 +185,13 @@ class CartItem(models.Model):
         default=1
     )
 
+    custom_message = models.CharField(max_length=200, blank=True, help_text="Message to write on the cake")
+    flavour = models.ForeignKey(
+        Flavour,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.product.name
@@ -131,6 +242,13 @@ class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2) 
+    custom_message = models.TextField(blank=True,null=True)
+    flavour = models.ForeignKey(
+        Flavour,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
 
     @property
     def subtotal(self):
@@ -138,3 +256,60 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.product.name}"
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="gallery_images"
+    )
+    image = models.ImageField(upload_to="products/gallery/")
+    thumbnail = models.ImageField(upload_to="products/gallery/thumbs/", blank=True, null=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._original_image = self.image.name if self.image else None
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        image_changed = self.image and self.image.name != self._original_image
+
+        if self.image and (not self.thumbnail or image_changed):
+            self._resize_main()
+            self._make_thumbnail()
+            super().save(update_fields=["image", "thumbnail"])
+            self._original_image = self.image.name
+
+    def _base_name(self):
+        return f"{self.product.slug}-gallery-{self.order}"
+
+    def _resize_main(self):
+        img = Image.open(self.image)
+        if img.width <= 1600:
+            return
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((1600, 1600), Image.LANCZOS)
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=82)
+        self.image.save(f"{self._base_name()}.webp", ContentFile(buffer.getvalue()), save=False)
+
+    def _make_thumbnail(self):
+        img = Image.open(self.image)
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((300, 300), Image.LANCZOS)
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=80)
+        self.thumbnail.save(f"{self._base_name()}-thumb.webp", ContentFile(buffer.getvalue()), save=False)
+
+
+    def __str__(self):
+        return f"{self.product.name} - image {self.order}"
+
