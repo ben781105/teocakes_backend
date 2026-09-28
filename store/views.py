@@ -5,13 +5,19 @@ from rest_framework import status, viewsets
 from .models import Category, Product,Cart,CartItem,OrderItem,Order,Flavour
 from .serializers import CategorySerializer, ProductSerializer,CartSerializer,CustomCakeRequestSerializer,OrderSerializer
 from django.db import transaction
+from django.views.decorators.cache import cache_page
+from django.db.models import Count, Q
+
 
 @api_view(["GET"])
 def products(request):
 
-    products = Product.objects.filter(
-        available=True
-    )
+    products = (
+    Product.objects
+    .filter(available=True)
+    .select_related("category")
+    .prefetch_related("flavours", "gallery_images")
+)
 
     serializer = ProductSerializer(
         products,
@@ -23,7 +29,12 @@ def products(request):
 
 @api_view(["GET"])
 def favourites(request):
-    products = Product.objects.filter(available=True, favourite=True)
+    products = (
+        Product.objects
+        .filter(available=True, favourite=True)
+        .select_related("category")
+        .prefetch_related("flavours", "gallery_images")
+    )
 
     serializer = ProductSerializer(
         products,
@@ -159,8 +170,11 @@ def create_custom_request(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Category.objects.all()
+    queryset = Category.objects.annotate(
+        available_product_count= Count("products",filter=Q(products__available=True))
+    )
     serializer_class = CategorySerializer
 
 

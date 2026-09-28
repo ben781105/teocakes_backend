@@ -1,0 +1,1937 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ntOiVW3wqnKkfoIsFXkhsi$kTeoqZVWUldxf2pn9o8p2RuwI31lfVs5rgiAj0KExXs=",
+    "last_login": "2026-09-20T16:56:29.151Z",
+    "is_superuser": true,
+    "username": "benard",
+    "first_name": "",
+    "last_name": "",
+    "email": "benardleno78@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-26T13:29:08.495Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dyedy7ekc9wocyalea7v0jvn54uhdfhz",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4awLc8evfcbCLCrVA0kpT0Z_9006UGvM5N5Q4j7VsLeeQ0LwQQIl1-WYn5yPQQ9Yr03kVvd1iWJIxGn7WJuxK_r2f4NSuwFJmDpUUeJrNiSpKxcQp9uXpHRbJVBli67EZ1H6UebWQ0KozTaGu_MgPD5As60No0:1wzHlE:wm_Jlp_3gUtbHl8MMNB9m0lUkGmHHyJ2-XieN6qHYig",
+    "expire_date": "2026-09-09T17:50:04.276Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "kemgkoup0h7opnyydwp4iq3y9wr7m0hk",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4awLc8evfcbCLCrVA0kpT0Z_9006UGvM5N5Q4j7VsLeeQ0LwQQIl1-WYn5yPQQ9Yr03kVvd1iWJIxGn7WJuxK_r2f4NSuwFJmDpUUeJrNiSpKxcQp9uXpHRbJVBli67EZ1H6UebWQ0KozTaGu_MgPD5As60No0:1x8Kq5:IAQtEV02UMD9IbQuvTRKfG2SBQCwABnBnOu3vHX6Ygw",
+    "expire_date": "2026-10-04T16:56:29.159Z"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Birthday Cakes",
+    "slug": "birthday-cakes",
+    "image": "categories/birthday-cakes.webp",
+    "thumbnail": "categories/thumbs/birthday-cakes-thumb_4ODuUHI.webp",
+    "description": "Fresh birthday cakes in Entebbe, made to order for kids and adults alike. Choose a classic flavor or request a personalized birthday cake design."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Wedding Cakes",
+    "slug": "wedding-cakes",
+    "image": "categories/wedding-cakes.webp",
+    "thumbnail": "categories/thumbs/wedding-cakes-thumb_RrgVSK2.webp",
+    "description": "Elegant wedding cakes in Entebbe, custom-designed for your big day. Beautifully finished cakes tailored to your theme, size, and guest count."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Chocolate Cakes",
+    "slug": "chocolate-cakes",
+    "image": "categories/chocolate-cakes.webp",
+    "thumbnail": "categories/thumbs/chocolate-cakes-thumb_zWCxER5.webp",
+    "description": "Handmade chocolate cakes in Entebbe, made with rich, moist sponge and smooth chocolate buttercream. Baked fresh and ordered easily on WhatsApp."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Vanilla Cakes",
+    "slug": "vanilla-Cakes",
+    "image": "categories/vanilla-Cakes.webp",
+    "thumbnail": "categories/thumbs/vanilla-Cakes-thumb_8azalSX.webp",
+    "description": "Classic vanilla cakes in Entebbe, baked fresh with smooth buttercream frosting. A simple, timeless cake that suits any birthday or event."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Fruit Cakes",
+    "slug": "fruit-cakes",
+    "image": "categories/fruit-cakes.webp",
+    "thumbnail": "categories/thumbs/fruit-cakes-thumb_qumZIU1.webp",
+    "description": "Fresh fruit cakes in Entebbe, made with soft sponge and real fruit filling. A light, refreshing cake option for any celebration or occasion."
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Custom Cakes",
+    "slug": "custom-cakes",
+    "image": "categories/custom-cakes.webp",
+    "thumbnail": "categories/thumbs/custom-cakes-thumb_5om6ZO7.webp",
+    "description": "Custom cakes in Entebbe, designed around your celebration and personal preferences. Order a personalized cake made exactly the way you imagined it."
+  }
+},
+{
+  "model": "store.flavour",
+  "pk": 1,
+  "fields": {
+    "name": "vanilla"
+  }
+},
+{
+  "model": "store.flavour",
+  "pk": 2,
+  "fields": {
+    "name": "strawberry"
+  }
+},
+{
+  "model": "store.flavour",
+  "pk": 3,
+  "fields": {
+    "name": "Mango"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Classic Birthday Cake",
+    "slug": "classic-birthday-cake",
+    "description": "Soft and fluffy vanilla sponge layered with smooth, creamy buttercream finished with colorful sprinkles.",
+    "price": "65000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/classic-birthday-cake.webp",
+    "thumbnail": "products/thumbs/classic-birthday-cake-thumb_HB0yASG.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:10:36.524Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Chocolate Birthday Cake",
+    "slug": "chocolate-birthday-cake",
+    "description": "Moist chocolate sponge layered with rich chocolate buttercream and finished with delicious chocolate decorations.",
+    "price": "70000.00",
+    "serving_size": "8 -10 people",
+    "prep_time": "48 hours",
+    "image": "products/chocolate-birthday-cake.webp",
+    "thumbnail": "products/thumbs/chocolate-birthday-cake-thumb_xYkkjCB.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:13:50.222Z",
+    "flavours": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "name": "Rainbow Cake",
+    "slug": "rainbow-cake",
+    "description": "Fun and colorful celebration cake made with soft vanilla sponge and creamy frosting, great for birthdays and joyful occasions.",
+    "price": "55000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/rainbow-cake.webp",
+    "thumbnail": "products/thumbs/rainbow-cake-thumb_4EqSBnI.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:17:16.649Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 5,
+    "name": "Strawberry Short Cake",
+    "slug": "strawberry-short-cake",
+    "description": "Soft vanilla sponge paired with creamy fruit filling for a refreshing fruity flavor, sweet cake and tangy strawberry",
+    "price": "60000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/strawberry-short-cake.webp",
+    "thumbnail": "products/thumbs/strawberry-short-cake-thumb_97325ld.webp",
+    "favourite": true,
+    "available": true,
+    "created_at": "2026-08-27T08:20:15.247Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Red Velvet Cake",
+    "slug": "red-velvet-cake",
+    "description": "Soft red velvet layers combined with a smooth, creamy cheese frosting. Finished with elegant decorative touches",
+    "price": "80000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/red-velvet-cake.webp",
+    "thumbnail": "products/thumbs/red-velvet-cake-thumb_ZpSxrhm.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:38:27.631Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "name": "Classic Vanilla Cake",
+    "slug": "classic-vanilla-cake",
+    "description": "A light and fluffy vanilla sponge layered with smooth vanilla buttercream.",
+    "price": "56000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/classic-vanilla-cake.webp",
+    "thumbnail": "products/thumbs/classic-vanilla-cake-thumb_6yJB2Xf.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:40:55.492Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 6,
+    "name": "Personalized Celebration Cake",
+    "slug": "personalized-celebration-cake",
+    "description": "Specially designed cake created around your celebration and personal preferences.",
+    "price": "80000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/personalized-celebration-cake.webp",
+    "thumbnail": "products/thumbs/personalized-celebration-cake-thumb_bOOxEjT.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:43:01.857Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Black Forest Cake",
+    "slug": "black-forest-cake",
+    "description": "Layers of moist chocolate sponge combined with light whipped cream and sweet cherries. Finished with chocolate shavings for a classic Black Forest experience",
+    "price": "85000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/black-forest-cake.webp",
+    "thumbnail": "products/thumbs/black-forest-cake-thumb_9wbFZ6g.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:45:44.950Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 2,
+    "name": "Elegant White Wedding Cake",
+    "slug": "elegant-white-wedding-Cake",
+    "description": "A beautifully layered vanilla cake covered with smooth white buttercream and delicate floral details.",
+    "price": "100000.00",
+    "serving_size": "",
+    "prep_time": "",
+    "image": "products/elegant-white-wedding-Cake.webp",
+    "thumbnail": "products/thumbs/elegant-white-wedding-Cake-thumb_ktYxCyJ.webp",
+    "favourite": false,
+    "available": true,
+    "created_at": "2026-08-27T08:51:53.543Z",
+    "flavours": []
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 1,
+  "fields": {
+    "cart_id": "af016ea1-6ae7-4c65-a9e4-8b9b6a28e05e",
+    "phone_number": "+256708693920",
+    "created_at": "2026-08-26T17:46:33.997Z"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 2,
+  "fields": {
+    "cart_id": "00716f02-8c5a-49a1-bb8b-a866f6b4de0b",
+    "phone_number": "+1 (508) 391-6497",
+    "created_at": "2026-08-30T07:22:01.627Z"
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 59,
+  "fields": {
+    "cart": 2,
+    "product": 7,
+    "quantity": 1,
+    "custom_message": "",
+    "flavour": null
+  }
+},
+{
+  "model": "store.customcakerequest",
+  "pk": 1,
+  "fields": {
+    "name": "Jordan Mooney",
+    "phone_number": "+1 (496) 533-3805",
+    "description": "Minima nostrum quia",
+    "size": "Architecto in iste a",
+    "flavor": "Illo aspernatur sequ",
+    "occasion": "Est ea sed velit la",
+    "date_needed": "1999-07-23",
+    "budget": "89.00",
+    "reference_image": "",
+    "additional_message": "Qui anim error qui h",
+    "created_at": "2026-09-05T14:38:44.736Z"
+  }
+},
+{
+  "model": "store.customcakerequest",
+  "pk": 2,
+  "fields": {
+    "name": "Lane May",
+    "phone_number": "+1 (231) 874-4347",
+    "description": "Quo enim velit mini",
+    "size": "Extra Large (serves 40+)",
+    "flavor": "Carrot",
+    "occasion": "Graduation",
+    "date_needed": "1996-01-01",
+    "budget": "100K - 200K",
+    "reference_image": "",
+    "additional_message": "Nesciunt tempor del",
+    "created_at": "2026-09-05T15:42:03.614Z"
+  }
+},
+{
+  "model": "store.customcakerequest",
+  "pk": 3,
+  "fields": {
+    "name": "Vladimir Park",
+    "phone_number": "+1 (939) 602-7173",
+    "description": "Ex minima et ut et u",
+    "size": "Small (serves 10-15)",
+    "flavor": "Carrot",
+    "occasion": "Anniversary",
+    "date_needed": "2013-03-13",
+    "budget": "Under 50K",
+    "reference_image": "",
+    "additional_message": "Recusandae Quo qui",
+    "created_at": "2026-09-05T15:48:05.050Z"
+  }
+},
+{
+  "model": "store.customcakerequest",
+  "pk": 4,
+  "fields": {
+    "name": "Sybil Ball",
+    "phone_number": "+1 (622) 692-8923",
+    "description": "Velit et ut odio fu",
+    "size": "Small (serves 10-15)",
+    "flavor": "Red Velvet",
+    "occasion": "Other (specify in notes)",
+    "date_needed": "1992-07-23",
+    "budget": "Ugx 45,678 (exact)",
+    "reference_image": "",
+    "additional_message": "Impedit adipisicing",
+    "created_at": "2026-09-05T15:50:07.765Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 1,
+  "fields": {
+    "order_id": "342fcaa9-fed7-4510-af22-c22ebc4e4e45",
+    "phone_number": "+256708693920",
+    "total": "170000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T06:49:41.254Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 2,
+  "fields": {
+    "order_id": "0608dec8-1cde-43f1-bd04-1bb8167d8afb",
+    "phone_number": "+256708956745",
+    "total": "60000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T07:26:19.667Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 3,
+  "fields": {
+    "order_id": "57b81fe7-1f20-427a-b6f6-23eefe49ce08",
+    "phone_number": "+2334576885",
+    "total": "195000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T07:27:20.546Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 4,
+  "fields": {
+    "order_id": "a7f3c4fc-7d5d-4943-9c30-6c41cb17b607",
+    "phone_number": "+2346578484",
+    "total": "80000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T07:33:26.488Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 5,
+  "fields": {
+    "order_id": "91b8daf0-3a08-4f58-bd62-4a7c30f8105a",
+    "phone_number": "+23465785234",
+    "total": "60000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T07:40:38.342Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 6,
+  "fields": {
+    "order_id": "c00b2efc-b058-465e-903e-eb08be728a46",
+    "phone_number": "+25678945546",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T08:05:51.872Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 7,
+  "fields": {
+    "order_id": "d2d81282-bc0e-4fcd-a00b-5591a6714ad4",
+    "phone_number": "+2567894542",
+    "total": "210000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T08:06:37.859Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 8,
+  "fields": {
+    "order_id": "2ddd2f0b-cbff-4844-9002-a570d354a38f",
+    "phone_number": "+2567465342",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T08:07:53.600Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 9,
+  "fields": {
+    "order_id": "df7c50d9-b8dd-4627-a63d-c2c3d58544f8",
+    "phone_number": "+2567654321",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T08:16:48.882Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 10,
+  "fields": {
+    "order_id": "8d0aa38b-6d0e-46e4-8783-bf6bba7f1a4c",
+    "phone_number": "+1 (784) 451-7846",
+    "total": "250000.00",
+    "status": "pending",
+    "created_at": "2026-08-30T10:50:23.089Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 11,
+  "fields": {
+    "order_id": "a063703b-600d-47e2-90cf-d883b8b36944",
+    "phone_number": "+2567864736",
+    "total": "120000.00",
+    "status": "pending",
+    "created_at": "2026-09-02T13:30:56.935Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 12,
+  "fields": {
+    "order_id": "8278a27e-6f46-4ede-9da7-c43b6e4b305f",
+    "phone_number": "256789846554",
+    "total": "135000.00",
+    "status": "pending",
+    "created_at": "2026-09-12T07:07:09.651Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 13,
+  "fields": {
+    "order_id": "08c4e818-684b-44ce-a043-5c11540ce09d",
+    "phone_number": "+256778695084",
+    "total": "210000.00",
+    "status": "pending",
+    "created_at": "2026-09-23T15:25:40.288Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 14,
+  "fields": {
+    "order_id": "3ba4326b-da31-4aaf-a225-1106a0554369",
+    "phone_number": "+25678943982",
+    "total": "60000.00",
+    "status": "pending",
+    "created_at": "2026-09-23T16:18:00.301Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 17,
+  "fields": {
+    "order_id": "bdf984ed-f63b-47e9-b281-6aa89633138d",
+    "phone_number": "+256756436478",
+    "total": "80000.00",
+    "status": "pending",
+    "created_at": "2026-09-23T16:28:11.891Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 19,
+  "fields": {
+    "order_id": "cc7913e3-dcda-453f-b0c1-71d2838bb11b",
+    "phone_number": "+256789567734",
+    "total": "230000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T13:23:49.663Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 20,
+  "fields": {
+    "order_id": "6014c859-3baa-40bb-a366-a5f88268d501",
+    "phone_number": "+1 (856) 601-7201",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T13:25:04.240Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 22,
+  "fields": {
+    "order_id": "77be1e94-14a5-4c4a-9f2c-5f770d7660d0",
+    "phone_number": "+1 (983) 288-3231",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T14:05:38.999Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 23,
+  "fields": {
+    "order_id": "3de049e8-50cc-4baf-8bdd-29e11de8a6c3",
+    "phone_number": "+1 (162) 367-4332",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T14:07:21.787Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 24,
+  "fields": {
+    "order_id": "8c602a38-dcc6-4e7c-aa0f-b0943a4627da",
+    "phone_number": "+1 (729) 958-7962",
+    "total": "140000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T14:09:08.486Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 25,
+  "fields": {
+    "order_id": "1cf80afd-4246-4e81-ab3b-f57fadc4fa23",
+    "phone_number": "+1 (508) 391-6497",
+    "total": "70000.00",
+    "status": "pending",
+    "created_at": "2026-09-24T15:57:01.454Z"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 8,
+    "quantity": 2,
+    "price": "85000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "product": 4,
+    "quantity": 1,
+    "price": "60000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "product": 1,
+    "quantity": 3,
+    "price": "65000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "product": 5,
+    "quantity": 1,
+    "price": "80000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "product": 4,
+    "quantity": 1,
+    "price": "60000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "product": 2,
+    "quantity": 3,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 8,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 9,
+  "fields": {
+    "order": 9,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 10,
+  "fields": {
+    "order": 10,
+    "product": 1,
+    "quantity": 3,
+    "price": "65000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 11,
+  "fields": {
+    "order": 10,
+    "product": 3,
+    "quantity": 1,
+    "price": "55000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 12,
+  "fields": {
+    "order": 11,
+    "product": 3,
+    "quantity": 1,
+    "price": "55000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 11,
+    "product": 1,
+    "quantity": 1,
+    "price": "65000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 12,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 15,
+  "fields": {
+    "order": 12,
+    "product": 1,
+    "quantity": 1,
+    "price": "65000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 16,
+  "fields": {
+    "order": 13,
+    "product": 2,
+    "quantity": 3,
+    "price": "70000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 17,
+  "fields": {
+    "order": 14,
+    "product": 4,
+    "quantity": 1,
+    "price": "60000.00",
+    "custom_message": null,
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 18,
+  "fields": {
+    "order": 17,
+    "product": 5,
+    "quantity": 1,
+    "price": "80000.00",
+    "custom_message": "",
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 19,
+  "fields": {
+    "order": 19,
+    "product": 5,
+    "quantity": 2,
+    "price": "80000.00",
+    "custom_message": "",
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 20,
+  "fields": {
+    "order": 19,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": "",
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 21,
+  "fields": {
+    "order": 20,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": "",
+    "flavour": null
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 22,
+  "fields": {
+    "order": 22,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": "",
+    "flavour": 2
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 23,
+  "fields": {
+    "order": 23,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": "",
+    "flavour": 1
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 24,
+  "fields": {
+    "order": 24,
+    "product": 2,
+    "quantity": 2,
+    "price": "70000.00",
+    "custom_message": "",
+    "flavour": 1
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 25,
+    "product": 2,
+    "quantity": 1,
+    "price": "70000.00",
+    "custom_message": "hddtyftkffytufgyugfyugyg7y6tg",
+    "flavour": 1
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-1.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-1-thumb_Rfrzh8P.webp",
+    "order": 1
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-2.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-2-thumb_VhB8L3K.webp",
+    "order": 2
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-3.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-3-thumb_ZAepnKe.webp",
+    "order": 3
+  }
+},
+{
+  "model": "store.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "image": "products/gallery/chocolate-birthday-cake-gallery-4.webp",
+    "thumbnail": "products/gallery/thumbs/chocolate-birthday-cake-gallery-4-thumb_O2HWO3X.webp",
+    "order": 4
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-08-27T07:42:18.005Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "1",
+    "object_repr": "Birthday Cakes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-08-27T07:42:45.672Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "2",
+    "object_repr": "Wedding Cakes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-08-27T07:42:55.946Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "3",
+    "object_repr": "CupCakes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-08-27T07:48:13.849Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Desserts",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-08-27T07:52:21.567Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Fruit Cakes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-08-27T07:53:54.575Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "3",
+    "object_repr": "Chocolate Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-08-27T07:54:44.991Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Vanilla & Classic Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-08-27T07:55:42.082Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Custom Cakes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-08-27T08:10:36.533Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "Classic Birthday Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-08-27T08:13:50.226Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "Chocolate Birthday Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-08-27T08:17:16.651Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Celebration Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-08-27T08:20:15.250Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Strawberry Short Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-08-27T08:21:55.890Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "Classic Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-08-27T08:23:57.412Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Strawberry Short Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-08-27T08:25:18.544Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Strawberry Short Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-08-27T08:25:51.444Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Celebration Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-08-27T08:26:17.607Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "Chocolate Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-08-27T08:26:56.384Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "Classic Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-08-27T08:28:02.526Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Strawberry Short Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-08-27T08:28:51.010Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Celebration Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-08-27T08:29:43.577Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "Classic Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-08-27T08:30:46.631Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Celebration Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-08-27T08:31:35.109Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "1",
+    "object_repr": "Classic Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-08-27T08:32:47.607Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "Strawberry Short Cake",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-08-27T08:38:27.634Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "Red Velvet Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-08-27T08:38:47.553Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Celebration Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-08-27T08:40:55.494Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "6",
+    "object_repr": "Classic Vanilla Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-08-27T08:43:01.859Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "7",
+    "object_repr": "Personalized Celebration Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-08-27T08:45:44.953Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "Black Forest Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-08-27T08:51:53.545Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "9",
+    "object_repr": "Elegant White Wedding Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-08-27T08:53:32.810Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "Black Forest Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Favourite\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-09-02T11:03:36.794Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Rainbow Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Slug\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-09-20T17:00:33.704Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Custom Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Slug\", \"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-09-20T17:00:40.680Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Custom Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-09-20T17:01:20.157Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Fruit Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-09-20T17:01:51.290Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Vanilla & Classic Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-09-20T17:02:12.294Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "3",
+    "object_repr": "Chocolate Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-09-20T17:02:21.944Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "2",
+    "object_repr": "Wedding Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-09-20T17:02:43.372Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "1",
+    "object_repr": "Birthday Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-09-20T19:39:43.839Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Fruit Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-09-20T19:40:29.252Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Fruit Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-09-21T15:59:19.256Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Vanilla Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Slug\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-09-22T10:02:12.853Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Custom Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-09-22T10:02:57.489Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Fruit Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-09-22T10:03:24.794Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Vanilla Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-09-22T10:04:11.851Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "3",
+    "object_repr": "Chocolate Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-09-22T10:04:48.482Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "2",
+    "object_repr": "Wedding Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-09-22T10:05:19.009Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "1",
+    "object_repr": "Birthday Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-09-22T10:05:31.667Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Custom Cakes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-09-23T15:16:05.875Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "Chocolate Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Serving size\", \"Prep time\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-09-23T15:16:44.470Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "flavour"
+    ],
+    "object_id": "1",
+    "object_repr": "vanilla",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-09-23T15:16:58.649Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "flavour"
+    ],
+    "object_id": "2",
+    "object_repr": "strawberry",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-09-23T15:17:10.860Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "flavour"
+    ],
+    "object_id": "3",
+    "object_repr": "Mango",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-09-23T15:18:49.235Z",
+    "user": [
+      "benard"
+    ],
+    "content_type": [
+      "store",
+      "product"
+    ],
+    "object_id": "2",
+    "object_repr": "Chocolate Birthday Cake",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Flavours\"]}}, {\"added\": {\"name\": \"product image\", \"object\": \"Chocolate Birthday Cake - image 1\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"Chocolate Birthday Cake - image 2\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"Chocolate Birthday Cake - image 3\"}}, {\"added\": {\"name\": \"product image\", \"object\": \"Chocolate Birthday Cake - image 4\"}}]"
+  }
+}
+]
