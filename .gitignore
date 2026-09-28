@@ -46,3 +46,7 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+
+# backup files
+backup_prod.json
+*.json.bak
