@@ -313,3 +313,57 @@ class ProductImage(models.Model):
     def __str__(self):
         return f"{self.product.name} - image {self.order}"
 
+class TikTokPost(models.Model):
+    cover = models.ImageField(
+        upload_to="tiktok/",
+        help_text="Vertical (9:16) cover image. A screenshot of the video is fine.",
+    )
+    caption = models.CharField(
+        max_length=120,
+        blank=True,
+        help_text="Short line shown over the image, e.g. 'Piping buttercream roses'",
+    )
+    url = models.URLField(help_text="Link to the TikTok video")
+    order = models.PositiveIntegerField(
+        default=0,
+        help_text="Lower numbers show first",
+    )
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+ 
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "TikTok post"
+        verbose_name_plural = "TikTok posts"
+ 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._original_cover = self.cover.name if self.cover else None
+ 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+ 
+        cover_changed = self.cover and self.cover.name != self._original_cover
+        needs_processing = self.cover and (
+            cover_changed or not self.cover.name.endswith(".webp")
+        )
+ 
+        if needs_processing:
+            self._resize_cover()
+            super().save(update_fields=["cover"])
+            self._original_cover = self.cover.name
+ 
+    def _resize_cover(self):
+        img = Image.open(self.cover)
+        if img.mode not in ("RGB", "RGBA"):
+            img = img.convert("RGB")
+        img.thumbnail((800, 800), Image.LANCZOS)
+ 
+        buffer = BytesIO()
+        img.save(buffer, format="WEBP", quality=80)
+ 
+        name = f"tiktok-{self.pk}.webp"
+        self.cover.save(name, ContentFile(buffer.getvalue()), save=False)
+ 
+    def __str__(self):
+        return self.caption or f"TikTok post {self.pk}"

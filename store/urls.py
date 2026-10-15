@@ -34,5 +34,10 @@ urlpatterns = [
         name="cart-item-detail"
     ),
 
-    
+    path(
+        "tiktok/",
+        views.tiktok_posts,
+        name="tiktok-posts"
+     ),
+ 
 ]

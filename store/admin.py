@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     Product, Category, Cart, CartItem,
-    CustomCakeRequest, Order, OrderItem, ProductImage,Flavour
+    CustomCakeRequest, Order, OrderItem, ProductImage,Flavour, TikTokPost
 )
 
 
@@ -20,3 +20,11 @@ class ProductImageInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInline]
+
+@admin.register(TikTokPost)
+class TikTokPostAdmin(admin.ModelAdmin):
+    list_display = ("__str__", "order", "active", "created_at")
+    list_editable = ("order", "active")
+    list_filter = ("active",)
+    fields = ("cover", "caption", "url", "order", "active")
+ 

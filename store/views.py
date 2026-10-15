@@ -2,8 +2,8 @@ from rest_framework.decorators import api_view,parser_classes
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status, viewsets
-from .models import Category, Product,Cart,CartItem,OrderItem,Order,Flavour
-from .serializers import CategorySerializer, ProductSerializer,CartSerializer,CustomCakeRequestSerializer,OrderSerializer
+from .models import Category, Product,Cart,CartItem,OrderItem,Order,Flavour, TikTokPost
+from .serializers import CategorySerializer, ProductSerializer,CartSerializer,CustomCakeRequestSerializer,OrderSerializer, TikTokPostSerializer
 from django.db import transaction
 from django.views.decorators.cache import cache_page
 from django.db.models import Count, Q
@@ -178,4 +178,14 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CategorySerializer
 
 
-
+@api_view(["GET"])
+def tiktok_posts(request):
+    posts = TikTokPost.objects.filter(active=True)
+ 
+    serializer = TikTokPostSerializer(
+        posts,
+        many=True,
+        context={"request": request},
+    )
+ 
+    return Response(serializer.data)

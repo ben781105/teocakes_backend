@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product,Cart,CartItem,CustomCakeRequest,Order,OrderItem,Category,Flavour,ProductImage
+from .models import Product,Cart,CartItem,CustomCakeRequest,Order,OrderItem,Category,Flavour,ProductImage, TikTokPost
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
@@ -45,13 +45,13 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def get_thumbnail(self, obj):
         request = self.context.get("request")
-        target = obj.thumbnail or obj.image   # fall back if thumb missing
+        target = obj.thumbnail or obj.image   
         return request.build_absolute_uri(target.url) if target else None
 
 class CategorySerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
     thumbnail = serializers.SerializerMethodField()
-    product_count = serializers.IntegerField(source='products.count', read_only=True)
+    product_count = serializers.IntegerField(source='available_products_count', read_only=True)
 
 
     class Meta:
@@ -143,4 +143,17 @@ class OrderSerializer(serializers.ModelSerializer):
         ]
 
 
-   
+class TikTokPostSerializer(serializers.ModelSerializer):
+    cover = serializers.SerializerMethodField()
+ 
+    class Meta:
+        model = TikTokPost
+        fields = ["id", "cover", "caption", "url", "order"]
+ 
+    def get_cover(self, obj):
+        request = self.context.get("request")
+        if not obj.cover:
+            return None
+        if request:
+            return request.build_absolute_uri(obj.cover.url)
+        return obj.cover.url  
